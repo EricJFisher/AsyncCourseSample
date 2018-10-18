@@ -3,16 +3,16 @@ using System.Threading.Tasks;
 
 namespace AsyncCourseSample
 {
-    class Program
+    public class Program
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
-            Task task = Method1Async();
+            Task task = GetTotalsAsync();
             task.Wait();
             Console.ReadLine();
         }
 
-        static async Task Method1Async()
+        public static async Task GetTotalsAsync()
         {
             Task<int> taskOne = SlowMethodOneAsync();
             Task<int> taskTwo = SlowMethodTwoAsync();
@@ -21,7 +21,7 @@ namespace AsyncCourseSample
             Console.WriteLine("Total: " + total);
         }
 
-        static async Task<int> SlowMethodOneAsync()
+        public static async Task<int> SlowMethodOneAsync()
         {
             int output = 5;
 
@@ -31,7 +31,7 @@ namespace AsyncCourseSample
             return output;
         }
 
-        static async Task<int> SlowMethodTwoAsync()
+        public static async Task<int> SlowMethodTwoAsync()
         {
             int output = 2;
 
